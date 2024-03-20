@@ -10,5 +10,12 @@
         <h1>home page</h1>
         <a href="{{ url_for('blog_page.blog') }}">blogpage</a>
     </center>
+
+    <div>
+        {% for blog in all_blogs %}
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.discription}}</p>
+        {% endfor %}
+    </div>
 </body>
 </html>

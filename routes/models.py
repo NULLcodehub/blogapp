@@ -11,3 +11,7 @@ class News:
             'title':self.title,
             'discription':self.discription
         })
+
+    @staticmethod
+    def show_news_data():
+        return mongo.db.news_data.find()

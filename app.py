@@ -10,7 +10,9 @@ app.register_blueprint(blog_page)
 
 @app.route('/')
 def index():
-    return  render_template('index.html')
+    from routes.models import News
+    all_blogs=News.show_news_data()
+    return  render_template('index.html',all_blogs=all_blogs)
 
 if __name__=="__main__":
     app.run(debug=True)
